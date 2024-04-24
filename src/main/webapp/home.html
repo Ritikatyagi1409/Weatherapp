@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Weather Application</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right,  #2b40ff,#07121a);
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    animation:fadein 3s ease-in-out;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-icon {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+    animation: floatUpDown 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatUpDown {
+    0% ,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: typing 4s steps(30, end) forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #fff;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.buttons {
+    display: flex; 
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 30px;
+    margin-top: 20px;
+    margin-left: 30px; 
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2980b9; 
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.btn:last-child {
+    margin-right: 0; 
+}
+
+.login-btn {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+.signup-btn {
+    background-color: #27ae60;
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #1e69b3; 
+}
+
+.signup-btn:hover {
+    background-color: #218c74;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <img src="images/3845731.png" alt="Weather Icon" class="weather-icon">
+    <h1 class="title">Welcome to the Weather Web App</h1>
+    <div class="buttons">
+        <form action="login.html" method="post">
+            <button class="btn login-btn" type="submit">Login</button>
+        </form>
+        <form action="registration.html" method="post">
+            <button class="btn signup-btn" type="submit">Signup</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
